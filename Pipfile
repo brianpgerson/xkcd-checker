@@ -11,7 +11,5 @@ python_version = "3.6"
 [packages]
 
 requests = "*"
-re = "*"
-os = "*"
 tinydb = "*"
 twilio = "*"
