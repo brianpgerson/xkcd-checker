@@ -25,7 +25,7 @@ if match:
 		# do the thing
 		client.api.account.messages.create(
 		    to= os.envorin.get('PHONE_NUMBER'),
-		    from_=os.envorin.get('FROM_NUMBER')
+		    from_=os.envorin.get('FROM_NUMBER'),
 		    body="New XKCD alert: https://www.xkcd.com/{0}".format(current)
 	    )
 		db.insert({'edition': current})
