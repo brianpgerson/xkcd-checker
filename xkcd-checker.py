@@ -5,8 +5,8 @@ from tinydb import TinyDB, Query
 # /usr/bin/env python
 from twilio.rest import Client
 
-account_sid = os.envorin.get('ACCOUNT_SID')
-auth_token = os.envorin.get('AUTH_TOKEN')
+account_sid = os.environ.get('ACCOUNT_SID')
+auth_token = os.environ.get('AUTH_TOKEN')
 
 client = Client(account_sid, auth_token)
 
@@ -24,8 +24,8 @@ if match:
 	if len(fromDb) == 0:
 		# do the thing
 		client.api.account.messages.create(
-		    to= os.envorin.get('PHONE_NUMBER'),
-		    from_=os.envorin.get('FROM_NUMBER'),
+		    to= os.environ.get('PHONE_NUMBER'),
+		    from_=os.environ.get('FROM_NUMBER'),
 		    body="New XKCD alert: https://www.xkcd.com/{0}".format(current)
 	    )
 		db.insert({'edition': current})
